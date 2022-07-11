@@ -1,0 +1,29 @@
+.aside-content {
+    background: grey;
+    height: 100%;
+}
+
+.main-content {
+    background: teal;
+    height: 100%;
+}
+
+.wrapper {
+    height: 1080px;
+}
+
+.red {
+    background: red;
+}
+
+.green {
+    background: green;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.orange {
+    background: orange;
+}

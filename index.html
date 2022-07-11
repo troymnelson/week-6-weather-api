@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Weather API App</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Weather Dashboard</a>
+        </div>
+    </nav>
+
+    <!-- Page Layout here -->
+    <div class="row wrapper">
+
+        <div class="col s3 aside-content">
+            <!-- Grey navigation panel -->
+            <h2>Search for a city:</h2>
+            <form>
+                <input class='city-name' type="text" placeholder="City Name">
+                <button class="submit">Submit</button>
+            </form>
+            <ul class="collection">
+            </ul>
+        </div>
+
+        <div class="col s9 main-content">
+            <!-- Teal page content  -->
+            <h2 class="city-name">City Name</h2>
+            <img id="weatherImg0" src="#" alt="">
+            <hr>
+            <p id="temp">Temp: </p>
+            <p id="wind">Wind: </p>
+            <p id="humidity">Humidity: </p>
+            <p id="uvIndex">UV Index: </p>
+            <hr>
+            <h3>5 Week Outlook:</h3>
+            <div class="wrapper row">
+                <div class="box1 col s2">
+                    <p class="center-align day1">Day 1</p>
+                    <img id="weatherImg1" src="#" alt="">
+                    <p class="temp1">Temp: </p>
+                    <p id="wind1">Wind: </p>
+                    <p id="humidity1">Humidity: </p>
+                    <p id="uvIndex1">UV Index: </p>
+                </div>
+                <div class="box2 col s2">
+                    <p class="center-align day2">Day 2</p>
+                    <img id="weatherImg2" src="#" alt="">
+                    <p class="temp2">Temp: </p>
+                    <p id="wind2">Wind: </p>
+                    <p id="humidity2">Humidity: </p>
+                    <p id="uvIndex2">UV Index: </p>
+                </div>
+                <div class="box3 col s2">
+                    <p class="center-align day3">Day 3</p>
+                    <img id="weatherImg3" src="#" alt="">
+                    <p class="temp3">Temp: </p>
+                    <p id="wind3">Wind: </p>
+                    <p id="humidity3">Humidity: </p>
+                    <p id="uvIndex3">UV Index: </p>
+                </div>
+                <div class="box4 col s2">
+                    <p class="center-align day4">Day 4</p>
+                    <img id="weatherImg4" src="#" alt="">
+                    <p class="temp4">Temp: </p>
+                    <p id="wind4">Wind: </p>
+                    <p id="humidity4">Humidity: </p>
+                    <p id="uvIndex4">UV Index: </p>
+                </div>
+                <div class="box5 col s2">
+                    <p class="center-align day5">Day 5</p>
+                    <img id="weatherImg5" src="#" alt="">
+                    <p class="temp5">Temp: </p>
+                    <p id="wind5">Wind: </p>
+                    <p id="humidity5">Humidity: </p>
+                    <p id="uvIndex5">UV Index: </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
+                        content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2014 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
