@@ -131,22 +131,22 @@ function openWeather(lat, long) {
       $cityUVIndex5.addClass(checkUVI(data.daily[5].uvi));
 
       var dataTest = data.daily[0].weather[0].icon;
-      $weatherImg0.attr('src', `http://openweathermap.org/img/wn/${dataTest}.png`)
+      $weatherImg0.attr('src', `https://openweathermap.org/img/wn/${dataTest}.png`)
 
       var dataTest = data.daily[1].weather[0].icon;
-      $weatherImg1.attr('src', `http://openweathermap.org/img/wn/${dataTest}.png`)
+      $weatherImg1.attr('src', `https://openweathermap.org/img/wn/${dataTest}.png`)
 
       var dataTest = data.daily[2].weather[0].icon;
-      $weatherImg2.attr('src', `http://openweathermap.org/img/wn/${dataTest}.png`)
+      $weatherImg2.attr('src', `https://openweathermap.org/img/wn/${dataTest}.png`)
 
       var dataTest = data.daily[3].weather[0].icon;
-      $weatherImg3.attr('src', `http://openweathermap.org/img/wn/${dataTest}.png`)
+      $weatherImg3.attr('src', `https://openweathermap.org/img/wn/${dataTest}.png`)
 
       var dataTest = data.daily[4].weather[0].icon;
-      $weatherImg4.attr('src', `http://openweathermap.org/img/wn/${dataTest}.png`)
+      $weatherImg4.attr('src', `https://openweathermap.org/img/wn/${dataTest}.png`)
 
       var dataTest = data.daily[5].weather[0].icon;
-      $weatherImg5.attr('src', `http://openweathermap.org/img/wn/${dataTest}.png`)
+      $weatherImg5.attr('src', `https://openweathermap.org/img/wn/${dataTest}.png`)
     });
 }
 
