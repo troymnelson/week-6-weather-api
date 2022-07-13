@@ -64,7 +64,7 @@ $submitBtn.click(function (e) {
   localStorage.setItem('userInput', userInput)
   $newHistory.prepend(localStorage.getItem(userInput) + '<hr>')
 
-  fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${userInput},&limit=${num}&appid=${keyCR}`)
+  fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${userInput},&limit=${num}&appid=${keyCR}`)
     .then(function (res) {
       return res.json();
     })
