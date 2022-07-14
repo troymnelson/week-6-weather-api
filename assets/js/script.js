@@ -50,34 +50,91 @@ var $day4El = $('.day4');
 var $day5El = $('.day5');
 
 var $newHistory = $('.collection')
-
+var userInput = '';
 $(document).ready(function () {
-  localStorage.getItem('userInput')
+  localStorage.getItem(userInput)
 })
 
 
+// const researchBtn = document.createElement('button');
+// const newHistory = document.querySelector('.collection');
+$submitBtn.click(function (e) {
+  e.preventDefault();
+  console.log('first click');
+  var $cityInput = $('.city-name')
+  userInput = $cityInput.val();
+  localStorage.setItem(userInput, userInput)
+  $newHistory.append(`<button class="search" id=${userInput}>${userInput}</button>` + '<hr>');
+  // console.log($newHistory.children().attr('.search'));
+  // console.log($(`#${userInput}`).text())
+  refetchData($(`#${userInput}`).text())
+  // console.log($newHistory.children())
+})
+
+
+function refetchData(text) {
+  $newHistory.children('button').click(function() {
+    console.log('clicked');
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${text},&limit=${num}&appid=${keyCR}`)
+  .then(function (res) {
+    return res.json();
+  })
+  .then(function (data) {
+    // Do something with the data
+    console.log(data[0].name);
+    $cityHeader.text('');
+    $cityHeader.text(data[0].name)
+    openWeather(data[0].lat, data['0'].lon)
+    // console.log(data);
+  });
+  })
+
+}
 
 $submitBtn.click(function (e) {
-  var $cityInput = $('.city-name')
-  let userInput = $cityInput.val();
   e.preventDefault();
-  localStorage.setItem('userInput', userInput)
-  $newHistory.prepend(localStorage.getItem(userInput) + '<hr>')
-
+  console.log('second click');
+  var $cityInput = $('.city-name')
+  userInput = $cityInput.val();
+  // localStorage.setItem(userInput, userInput)
+  // $newHistory.append(`<button class="search">${userInput}</button>` + '<hr>');
+  // console.log($newHistory.children().attr('.search'));
+  // console.log($('.search').text())
+  // researchBtn.textContent = userInput;
+  // researchBtn.classList.add('search');
+  // new  History.appendChild(researchBtn);
   fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${userInput},&limit=${num}&appid=${keyCR}`)
     .then(function (res) {
       return res.json();
     })
     .then(function (data) {
       // Do something with the data
+      console.log(data);
+      $cityHeader.append(convertDate(data[0].dt));
       $cityHeader.text(data['0'].name)
       openWeather(data['0'].lat, data['0'].lon)
-      console.log(data);
+      // console.log(data);
     });
+    userInput = '';
 })
 
+var $searchBtn = $('.search');
+$searchBtn.click(function() {
+  // console.log('clicked');
 
-
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${this.textContent},&limit=${num}&appid=${keyCR}`)
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (data) {
+      // Do something with the data
+      // $cityHeader.text(data['0'].name)
+      openWeather(data['0'].lat, data['0'].lon)
+      // console.log(data);
+    });
+  
+ 
+})
 
 
 function openWeather(lat, long) {
@@ -86,7 +143,7 @@ function openWeather(lat, long) {
     .then(function (data) {
 
 
-      $cityHeader.append(convertDate(data.daily[0].dt));
+      
       $day1El.text(convertDate(data.daily[1].dt));
       $day2El.text(convertDate(data.daily[2].dt));
       $day3El.text(convertDate(data.daily[3].dt));
